@@ -1,0 +1,14 @@
+C:\projetos_estudos\CadastroV2\CadastroV2\EFCodeFirst\bin\Debug\EFCodeFirst.dll.config
+C:\projetos_estudos\CadastroV2\CadastroV2\EFCodeFirst\bin\Debug\EFCodeFirst.dll
+C:\projetos_estudos\CadastroV2\CadastroV2\EFCodeFirst\bin\Debug\EFCodeFirst.pdb
+C:\projetos_estudos\CadastroV2\CadastroV2\EFCodeFirst\bin\Debug\EntityFramework.dll
+C:\projetos_estudos\CadastroV2\CadastroV2\EFCodeFirst\bin\Debug\EntityFramework.SqlServer.dll
+C:\projetos_estudos\CadastroV2\CadastroV2\EFCodeFirst\bin\Debug\EntityFramework.xml
+C:\projetos_estudos\CadastroV2\CadastroV2\EFCodeFirst\bin\Debug\EntityFramework.SqlServer.xml
+C:\projetos_estudos\CadastroV2\CadastroV2\EFCodeFirst\obj\Debug\EFCodeFirst.csprojAssemblyReference.cache
+C:\projetos_estudos\CadastroV2\CadastroV2\EFCodeFirst\obj\Debug\EFCodeFirst.Migrations.Release1.resources
+C:\projetos_estudos\CadastroV2\CadastroV2\EFCodeFirst\obj\Debug\EFCodeFirst.csproj.GenerateResource.cache
+C:\projetos_estudos\CadastroV2\CadastroV2\EFCodeFirst\obj\Debug\EFCodeFirst.csproj.CoreCompileInputs.cache
+C:\projetos_estudos\CadastroV2\CadastroV2\EFCodeFirst\obj\Debug\EFCodeFirst.csproj.CopyComplete
+C:\projetos_estudos\CadastroV2\CadastroV2\EFCodeFirst\obj\Debug\EFCodeFirst.dll
+C:\projetos_estudos\CadastroV2\CadastroV2\EFCodeFirst\obj\Debug\EFCodeFirst.pdb
