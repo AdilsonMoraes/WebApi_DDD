@@ -97,6 +97,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Arguments\Autenticarusuario.cs" />
     <Compile Include="CadastroFuncionario\Funcionario.cs" />
     <Compile Include="CadastroFuncionario\Repositorio\IFuncionarioRepositorio.cs" />
     <Compile Include="CadastroFuncionario\Servico\FuncionarioServico.cs" />
@@ -105,8 +106,10 @@
     <Compile Include="CadastroUsuario\Servico\IUsuarioServico.cs" />
     <Compile Include="CadastroUsuario\Servico\UsuarioServico.cs" />
     <Compile Include="CadastroUsuario\Usuario.cs" />
+    <Compile Include="Enum\EnumSitiacaoStatus.cs" />
     <Compile Include="Helper\CriptoHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValueObjects\NomeFuncionario.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

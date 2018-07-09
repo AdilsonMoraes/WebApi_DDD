@@ -1,4 +1,5 @@
-﻿using Cadastro.Dominio.CadastroUsuario;
+﻿using Cadastro.Dominio.Arguments;
+using Cadastro.Dominio.CadastroUsuario;
 using Cadastro.Dominio.CadastroUsuario.Repositorio;
 using System;
 using System.Collections.Generic;
@@ -41,29 +42,40 @@ VALUES (@login, @senha, @funcionarioid)";
 
         public IEnumerable<Usuario> ListarUsuario()
         {
-            var usuario = new List<Usuario>();
+            var usuario_retorno = new List<Usuario>();
 
             using (var conexao = new SqlConnection())
             {
                 conexao.ConnectionString = ConfigurationManager.ConnectionStrings["principal"].ToString();
-                conexao.Open();
+
                 using (var comando = new SqlCommand())
                 {
                     comando.Connection = conexao;
-                    comando.CommandText = string.Format("select * from usuario");
+                    comando.CommandText = @"select u.usuarioid, u.login, 
+u.senha, u.status, f.funcionarioid, f.nome, f.registro, f.telefone
+from usuario u left join funcionario f on u.funcionarioid = f.funcionarioid";
+
+                    if (comando.Connection.State != ConnectionState.Open) { comando.Connection.Open(); }
+
                     var reader = comando.ExecuteReader();
+
                     while (reader.Read())
                     {
-                        usuario.Add(new Usuario
+                        usuario_retorno.Add(new Usuario
                         {
                             usuarioid = (int)reader["usuarioid"],
                             login = (string)reader["login"],
-                            senha = (string)reader["senha"]
+                            senha = (string)reader["senha"],
+                            funcionarioid = (int)reader["funcionarioid"],
+                            nome = (string)reader["nome"],
+                            registro = (string)reader["registro"],
+                            telefone = (string)reader["telefone"],
+                            status = (int)reader["status"]
                         });
                     }
                 }
             }
-            return usuario;
+            return usuario_retorno;
         }
 
         public Usuario ListarUsuarioPeloId(int id)
@@ -77,21 +89,26 @@ VALUES (@login, @senha, @funcionarioid)";
                 using (var comando = new SqlCommand())
                 {
                     comando.Connection = conexao;
-                    comando.CommandText = @"select usuarioid, login, senha 
-from Usuario 
-where usuarioid = @usuarioid";
+                    comando.CommandText = @"select u.usuarioid, u.login, 
+u.senha, u.status, f.funcionarioid, f.nome, f.registro, f.telefone
+from usuario u left join funcionario f on u.funcionarioid = f.funcionarioid
+where usuarioid = @usuarioid" ;
 
                     comando.Parameters.Add(CriarParametro(comando, "usuarioid", id));
-
                     var reader = comando.ExecuteReader();
 
                     if (reader.Read())
                     {
                         usuario = new Usuario
                         {
-                            usuarioid = reader.GetInt32(0),
-                            login = reader.GetString(1),
-                            senha = reader.GetString(2)
+                            usuarioid = (int)reader["usuarioid"],
+                            login = (string)reader["login"],
+                            senha = (string)reader["senha"],
+                            funcionarioid = (int)reader["funcionarioid"],
+                            nome = (string)reader["nome"],
+                            registro = (string)reader["registro"],
+                            telefone = (string)reader["telefone"],
+                            status = (int)reader["status"]
                         };
                     }
                 }
@@ -176,5 +193,9 @@ where usuarioid = @usuarioid";
 
         }
 
+        public string Autenticar(Autenticarusuario request)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

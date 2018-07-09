@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cadastro.Dominio.Arguments;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,5 +14,6 @@ namespace Cadastro.Dominio.CadastroUsuario.Repositorio
         Usuario InserirUsuario(Usuario item);
         void DeletarUsuario(int id);
         void AlterarUsuario(Usuario item);
+        string Autenticar(Autenticarusuario request); //vai retornar o token
     }
 }

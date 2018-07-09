@@ -52,6 +52,10 @@
     <Compile Include="Migrations\201807031530206_Release1.Designer.cs">
       <DependentUpon>201807031530206_Release1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807091956557_release2.cs" />
+    <Compile Include="Migrations\201807091956557_release2.Designer.cs">
+      <DependentUpon>201807091956557_release2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Funcionario.cs" />
     <Compile Include="Models\Usuario.cs" />
@@ -64,6 +68,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201807031530206_Release1.resx">
       <DependentUpon>201807031530206_Release1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807091956557_release2.resx">
+      <DependentUpon>201807091956557_release2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

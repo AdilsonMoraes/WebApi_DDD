@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Cadastro.Dominio.Arguments;
+using System.Collections.Generic;
 
 namespace Cadastro.Dominio.CadastroUsuario.Servico
 {
@@ -9,5 +10,6 @@ namespace Cadastro.Dominio.CadastroUsuario.Servico
         void InserirUsuario(Usuario item);
         void DeletarUsuario(int id);
         void AlterarUsuario(Usuario item);
+        string Autenticar(Autenticarusuario request); //vai retornar o token
     }
 }

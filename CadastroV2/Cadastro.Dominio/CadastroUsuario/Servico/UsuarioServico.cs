@@ -1,6 +1,6 @@
-﻿using Cadastro.Dominio.CadastroUsuario.Repositorio;
+﻿using Cadastro.Dominio.Arguments;
+using Cadastro.Dominio.CadastroUsuario.Repositorio;
 using Cadastro.Dominio.Helper;
-using System;
 using System.Collections.Generic;
 
 
@@ -42,5 +42,27 @@ namespace Cadastro.Dominio.CadastroUsuario.Servico
             usuario.senha = CriptoHelper.HashMD5(usuario.senha);
             _repositorio.AlterarUsuario(usuario);
         }
+
+        public string Autenticar(Autenticarusuario request)
+        {
+            //if (request == null)
+            //{
+            //    throw new Exception("Autenticação zuada");
+            //}
+
+            //if (string.IsNullOrEmpty(request.login))
+            //{
+            //    throw new Exception("Autenticação zuada");
+            //}
+
+            //if (string.IsNullOrEmpty(request.senha))
+            //{
+            //    throw new Exception("Autenticação zuada");
+            //}
+
+            var response = _repositorio.Autenticar(request);
+            return response;
+
+        }      
     }
 }
